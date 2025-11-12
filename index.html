@@ -71,11 +71,101 @@
         <button class="ticets__form__button">Найти билеты</button>
       </form>
     </section>
+    <section class="skidki">
+      <h2 class="skidki__title">Успей купить</h2>
+      <h3 class="skidki__subtitle">Горячие билеты</h3>
+
+      <div class="glide" id="option-type">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <article class="skidka">
+                <h4 class="skidka__title">
+                  2 099 P
+                  <span class="crossed-out">4 099 P</span>
+                </h4>
+                <div class="skidka-content">
+                  <h3 class="skidka-content__title">Москва - Сочи</h3>
+                  <p>
+                    20 окт, пн
+                    <span> 19.15-22.55 </span>
+                  </p>
+                  <p class="skidka-content__text-alternative">
+                    3.5 ч. в пути <br />Прямой
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="glide__slide">
+              <article class="skidka">
+                <h4 class="skidka__title">
+                  2 099 P
+                  <span class="crossed-out">4 099 P</span>
+                </h4>
+                <div class="skidka-content">
+                  <h3 class="skidka-content__title">Москва - Сочи</h3>
+                  <p>
+                    20 окт, пн
+                    <span> 19.15-22.55 </span>
+                  </p>
+                  <p class="skidka-content__text-alternative">
+                    3.5 ч. в пути <br />Прямой
+                  </p>
+                </div>
+              </article>
+            </li>
+            <li class="glide__slide">
+              <article class="skidka">
+                <h4 class="skidka__title">
+                  2 099 P
+                  <span class="crossed-out">4 099 P</span>
+                </h4>
+                <div class="skidka-content">
+                  <h3 class="skidka-content__title">Москва - Сочи</h3>
+                  <p>
+                    20 окт, пн
+                    <span> 19.15-22.55 </span>
+                  </p>
+                  <p class="skidka-content__text-alternative">
+                    3.5 ч. в пути <br />Прямой
+                  </p>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+          <button
+            class="glide__arrow glide__arrow--left"
+            data-glide-dir="<"
+          ></button>
+          <button
+            class="glide__arrow glide__arrow--right"
+            data-glide-dir=">"
+          ></button>
+        </div>
+      </div>
+    </section>
 
     <script src="./js/script.js"></script>
-    <!-- <script>
+    <script>
       // Инициализация Glide
-      // new Glide(".glide").mount();
-    </script> -->
+      const glide = new Glide(".glide", {
+        type: "carousel",
+        perView: 3,
+        gap: 10,
+        autoplay: 3000,
+        loop: true,
+        animationDuration: 700,
+        breakpoints: {
+          1320: {
+            perView: 2,
+          },
+          900: {
+            perView: 1,
+          },
+        },
+      }).mount();
+    </script>
   </body>
 </html>

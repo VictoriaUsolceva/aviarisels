@@ -20,3 +20,15 @@ function removeClassOnSizeChange(e) {
 removeClassOnSizeChange(mediaQuery);
 
 mediaQuery.addEventListener("change", removeClassOnSizeChange);
+
+// функция чтобы узнать ширину html без прокрутки
+const html = document.querySelector("html");
+
+function updateWidth() {
+  const offsetWidth = html.offsetWidth;
+  console.log("Полная ширина (offsetWidth):", offsetWidth);
+  html.style.setProperty("--window-width", `${offsetWidth}px`);
+}
+
+window.addEventListener("resize", updateWidth);
+updateWidth();

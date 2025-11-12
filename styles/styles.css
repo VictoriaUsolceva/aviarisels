@@ -122,34 +122,40 @@
 /* ticets */
 
 .ticets {
-  background-color: transparent;
+  position: relative;
   display: grid;
+  grid-template-columns: 100%;
   grid-template-rows: 1fr 1fr;
   align-items: center;
   padding-inline: min(60px, 2%);
+  background-color: transparent;
 
   min-block-size: max-content;
   block-size: 100vh;
-  position: relative;
-  grid-template-columns: 100%;
 }
 
 .ticets::before {
   content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
   display: block;
   background-color: #0c73fe;
   background-image: url(../images/clouds-planes.png);
   background-repeat: no-repeat;
   background-position: center 80%;
   background-size: contain;
-  position: absolute;
-  /* left:; */
-  /* left: calc((100% - 100vw) / 2); */
-  left: min(0px, calc((100% - 100vw) / 2));
-  top: 0;
-  inline-size: max(100vw, 100%);
+  inline-size: 100%;
   block-size: 100%;
-  z-index: -1;
+}
+
+@media (width >= 1440px) {
+  /* выполнено через js */
+  .ticets::before {
+    left: calc((100% - var(--window-width)) / 2);
+    inline-size: var(--window-width);
+  }
 }
 
 .ticets__title {
@@ -184,8 +190,8 @@
 }
 
 .ticets__form__input {
-  padding: 22.5px 10px;
   border-radius: 0;
+  padding: 22.5px 10px;
 }
 
 .ticets__form__input:first-of-type {
@@ -198,6 +204,7 @@
 
 .ticets__form__button {
   border: none;
+  border-radius: 15px;
   font-weight: 400;
   font-size: 18px;
 
@@ -205,7 +212,6 @@
   line-height: 1.3;
   letter-spacing: -0.05em;
   background: #fa742d;
-  border-radius: 15px;
 }
 
 @media (width <= 768px) {
@@ -216,8 +222,8 @@
 
   .ticets__form {
     grid-template-columns: repeat(4, 24%);
-    gap: 5% 0;
     justify-content: space-between;
+    gap: 5% 0;
   }
 
   .ticets__form__input:first-of-type {
@@ -231,5 +237,161 @@
 
   .ticets__form__input:nth-of-type(3) {
     border-radius: 15px 0 0 15px;
+  }
+}
+
+/* skidki */
+
+.skidki {
+  position: relative;
+  margin-inline: auto;
+  margin-block-start: -120px;
+  border-radius: 15px;
+
+  padding: 30px;
+  color: #fff;
+  background: linear-gradient(90deg, #95cc51 0%, #6ebd6f 100%);
+  inline-size: 50%;
+}
+
+.skidki::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  display: block;
+
+  background: url(../images/dollar\ money\ bag.png);
+
+  inline-size: 95px;
+  block-size: 76px;
+}
+
+.skidki__title {
+  font-weight: 600;
+  font-size: 32px;
+  font-style: normal;
+  line-height: 44px;
+  letter-spacing: -0.05em;
+}
+
+.skidki__subtitle {
+  font-weight: 600;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 22px;
+  letter-spacing: -0.05em;
+}
+
+.glide__arrow {
+  display: block;
+  border: none;
+  border-radius: 15px;
+  background-color: transparent;
+  background-image: url(../images/down-fill.svg);
+  filter: brightness(0) invert(1);
+  inline-size: 24px;
+  block-size: 24px;
+}
+
+.glide__arrow--left {
+  transform: rotate(90deg);
+}
+
+.glide__arrow--right {
+  transform: rotate(-90deg);
+}
+
+.glide__arrows {
+  display: flex;
+  justify-content: space-around;
+
+  margin-block-start: 15px;
+}
+
+.skidka {
+  position: relative;
+  margin-block-start: 55px;
+  border-radius: 15px;
+  padding: 15px;
+
+  color: #100e09;
+  background: #ffffff;
+}
+
+.skidka::before {
+  content: "суперскидка - 45%";
+  position: absolute;
+  top: -7px;
+  right: 0;
+  border-radius: 15px;
+
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 10px;
+
+  font-style: normal;
+  line-height: 14px;
+  letter-spacing: -0.05em;
+  text-align: center;
+
+  background: #3bbf56;
+  inline-size: 50%;
+}
+
+.skidka__title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  font-weight: 600;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 22px;
+  letter-spacing: -0.05em;
+}
+
+.crossed-out {
+  align-self: flex-start;
+
+  color: rgba(16, 14, 9, 0.3);
+  font-weight: 600;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 19px;
+  letter-spacing: -0.05em;
+  text-decoration-line: line-through;
+}
+
+.skidka-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(2, min-content);
+  font-weight: 600;
+  font-size: 10px;
+
+  font-style: normal;
+  line-height: 14px;
+  letter-spacing: -0.05em;
+}
+
+.skidka-content__title {
+  font-weight: 600;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: -0.05em;
+}
+
+.skidka-content__text-alternative {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  text-align: right;
+}
+
+@media (width <= 768px) {
+  .skidki {
+    top: 0;
+    margin-block-start: 20px;
+    inline-size: 94%;
   }
 }
