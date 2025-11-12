@@ -362,6 +362,10 @@
   text-decoration-line: line-through;
 }
 
+.pale {
+  color: rgba(16, 14, 9, 0.3);
+}
+
 .skidka-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -394,4 +398,38 @@
     margin-block-start: 20px;
     inline-size: 94%;
   }
+}
+
+/* plan */
+
+.plan {
+  background: #fff;
+  border-radius: 15px;
+  padding: 60px;
+  margin-block: 30px;
+  margin-inline: 2%;
+}
+
+.plan__title {
+  padding-block-end: 30px;
+}
+
+.plan_card {
+  display: grid;
+  gap: 15px;
+  align-items: center;
+}
+
+.plan_card img {
+  inline-size: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.glide__arrows {
+  margin-block-start: 30px;
+}
+
+.arrow-contrast {
+  filter: none;
 }
