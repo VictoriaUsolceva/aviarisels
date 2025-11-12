@@ -31,7 +31,7 @@
   grid-template-columns: max-content min-content;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 60px;
+  padding: 16px min(60px, 5%);
   inline-size: 100%;
 }
 
@@ -77,7 +77,7 @@
   padding: 1.5em;
 }
 
-@media (min-width: 768px) {
+@media (width > 768px) {
   .header {
     display: flex;
   }
@@ -117,4 +117,119 @@
 
 .city-vector::before {
   background-image: url(../images/sity-vector.svg);
+}
+
+/* ticets */
+
+.ticets {
+  background-color: transparent;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  padding-inline: min(60px, 2%);
+
+  min-block-size: max-content;
+  block-size: 100vh;
+  position: relative;
+  grid-template-columns: 100%;
+}
+
+.ticets::before {
+  content: "";
+  display: block;
+  background-color: #0c73fe;
+  background-image: url(../images/clouds-planes.png);
+  background-repeat: no-repeat;
+  background-position: center 80%;
+  background-size: contain;
+  position: absolute;
+  /* left:; */
+  /* left: calc((100% - 100vw) / 2); */
+  left: min(0px, calc((100% - 100vw) / 2));
+  top: 0;
+  inline-size: max(100vw, 100%);
+  block-size: 100%;
+  z-index: -1;
+}
+
+.ticets__title {
+  align-self: end;
+  margin-block-end: 60px;
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
+  text-align: center;
+}
+
+.ticets__form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 15px;
+  align-self: start;
+}
+
+.form__input {
+  border: none;
+  border-radius: 8px;
+  font-weight: 400;
+  font-size: 18px;
+
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: -0.05em;
+  background: #fff;
+  appearance: none;
+}
+
+.form__input::placeholder {
+  opacity: 0.3;
+}
+
+.ticets__form__input {
+  padding: 22.5px 10px;
+  border-radius: 0;
+}
+
+.ticets__form__input:first-of-type {
+  border-radius: 15px 0px 0px 15px;
+}
+
+.ticets__form__input:last-of-type {
+  border-radius: 0px 15px 15px 0px;
+}
+
+.ticets__form__button {
+  border: none;
+  font-weight: 400;
+  font-size: 18px;
+
+  font-style: normal;
+  line-height: 1.3;
+  letter-spacing: -0.05em;
+  background: #fa742d;
+  border-radius: 15px;
+}
+
+@media (width <= 768px) {
+  .ticets {
+    padding-block: 90px 10px;
+    block-size: 70dvh;
+  }
+
+  .ticets__form {
+    grid-template-columns: repeat(4, 24%);
+    gap: 5% 0;
+    justify-content: space-between;
+  }
+
+  .ticets__form__input:first-of-type {
+    grid-column: 1 / span 2;
+  }
+
+  .ticets__form__input:nth-of-type(2) {
+    grid-column: 3 / span 2;
+    border-radius: 0 15px 15px 0;
+  }
+
+  .ticets__form__input:nth-of-type(3) {
+    border-radius: 15px 0 0 15px;
+  }
 }
