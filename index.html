@@ -19,10 +19,30 @@
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
   </head>
   <body class="page">
+    <a id="start"></a>
+    <header class="contrast-colors header">
+      <a>
+        <img src="./images/logo.svg" alt="логотип" />
+      </a>
+      <button type="button" class="menu__button">
+        <span class="visually-hidden">Показать меню</span>
+      </button>
+      <nav class="menu">
+        <ul class="menu__list">
+          <li class="light-plane before">
+            <a href="./about.html"> О нас </a>
+          </li>
+          <li class="city-vector before">
+            <a href="./cities.html"> Коротко в городах </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
     <script src="./js/script.js"></script>
-    <script>
+    <!-- <script>
       // Инициализация Glide
-      new Glide(".glide").mount();
-    </script>
+      // new Glide(".glide").mount();
+    </script> -->
   </body>
 </html>
