@@ -533,3 +533,59 @@ html {
   text-align: end;
   background-image: url(../images/down-fill.svg);
 }
+
+/* cotic */
+
+.cotic {
+
+  display: grid;
+  justify-content: center;
+  margin-inline: 2%;
+  margin-block: 90px 60px;
+  border-radius: 15px;
+  padding: 60px;
+
+  color: #100e09;
+  font-weight: 400;
+  font-size: 24px;
+
+  font-style: normal;
+  line-height: 33px;
+  text-align: center;
+  background: #e1e5e9;
+}
+
+@media (width <= 768px) {
+  .cotic {
+    padding-inline: 30px;
+    padding-block: 30px;
+  }
+}
+
+.cotic-find {
+  z-index: 1;
+  display: block;
+  margin: auto;
+  margin-top: calc(-100% / 4);
+  block-size: auto;
+}
+
+.cotic__title {
+  margin-block-end: 15px;
+  font-weight: 700;
+  font-size: 48px;
+  font-style: normal;
+  line-height: 65px;
+}
+
+.cotic__button {
+  margin-block-start: 30px;
+  border-radius: 15px;
+  padding: 18px 102px;
+  font-weight: 700;
+  font-size: 24px;
+
+  font-style: normal;
+  line-height: 33px;
+  background: #fff;
+}
