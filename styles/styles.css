@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .page {
   color: #100e09;
   font-family: "Open Sans", sans-serif;
@@ -20,6 +24,13 @@
   block-size: 1px;
 }
 
+.section__title {
+  font-weight: 700;
+  font-size: 30px;
+  font-style: normal;
+  line-height: 41px;
+}
+
 /* header */
 
 .header {
@@ -33,6 +44,12 @@
   align-items: center;
   padding: 16px min(60px, 5%);
   inline-size: 100%;
+}
+
+@media (width >= 1440px) {
+  .header {
+    padding-inline: calc((var(--window-width) - 1440px) / 2);
+  }
 }
 
 .menu__button {
@@ -216,7 +233,7 @@
 
 @media (width <= 768px) {
   .ticets {
-    padding-block: 90px 10px;
+    padding-block: 90px 30px;
     block-size: 70dvh;
   }
 
@@ -403,11 +420,18 @@
 /* plan */
 
 .plan {
-  background: #fff;
+  margin-inline: 2%;
+  margin-block: 30px;
   border-radius: 15px;
   padding: 60px;
-  margin-block: 30px;
-  margin-inline: 2%;
+  background: #fff;
+}
+
+@media (width <= 768px) {
+  .plan {
+    padding-inline: 30px;
+    padding-block: 30px;
+  }
 }
 
 .plan__title {
@@ -416,14 +440,14 @@
 
 .plan_card {
   display: grid;
-  gap: 15px;
   align-items: center;
+  gap: 15px;
 }
 
 .plan_card img {
-  inline-size: 100%;
   object-fit: contain;
   object-position: center;
+  inline-size: 100%;
 }
 
 .glide__arrows {
@@ -432,4 +456,80 @@
 
 .arrow-contrast {
   filter: none;
+}
+
+/* napravlenia */
+
+.napravlenia {
+  position: relative;
+  padding: 60px;
+  background: #fff;
+}
+
+@media (width <= 768px) {
+  .napravlenia {
+    padding-inline: 30px;
+    padding-block: 30px;
+  }
+}
+
+@media (width >= 1440px) {
+  .napravlenia::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc((100% - var(--window-width)) / 2);
+    z-index: -1;
+    display: block;
+    background-color: #fff;
+    block-size: 100%;
+    inline-size: var(--window-width);
+  }
+}
+
+.napravlenia__title {
+  margin-block-end: 60px;
+}
+
+.napravlenia__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+@media (width <= 1320px) {
+  .napravlenia__list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width <= 768px) {
+  .napravlenia__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.napravlenia__button {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  border: none;
+}
+
+.napravlenia__list-item {
+  display: flex;
+  border-radius: 15px;
+  padding-inline: 25px;
+  padding-block: 22.5px;
+  background: #eff1f4;
+  inline-size: 100%;
+}
+
+.napravlenia__list-item:before {
+  --before-size: 24px;
+  display: inline-block;
+  order: 1;
+  margin-left: auto;
+  text-align: end;
+  background-image: url(../images/down-fill.svg);
 }
