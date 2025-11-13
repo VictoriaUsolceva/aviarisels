@@ -442,6 +442,10 @@ html {
   display: grid;
   align-items: center;
   gap: 15px;
+  font-size: 24px;
+
+  font-style: normal;
+  line-height: 33px;
 }
 
 .plan_card img {
@@ -456,6 +460,12 @@ html {
 
 .arrow-contrast {
   filter: none;
+}
+
+.dark-plane::before {
+  align-self: center;
+  opacity: 0.5;
+  background-image: url(../images/dark-plane.svg);
 }
 
 /* napravlenia */
@@ -514,6 +524,7 @@ html {
   flex-wrap: wrap;
   gap: 5px;
   border: none;
+  background-color: transparent;
 }
 
 .napravlenia__list-item {
@@ -522,7 +533,14 @@ html {
   padding-inline: 25px;
   padding-block: 22.5px;
   background: #eff1f4;
+
+  transition: background-color 0.3s ease-in-out;
   inline-size: 100%;
+}
+
+.napravlenia__list-item:hover {
+  background-color: #e1e5e9;
+  cursor: pointer;
 }
 
 .napravlenia__list-item:before {
@@ -537,7 +555,6 @@ html {
 /* cotic */
 
 .cotic {
-
   display: grid;
   justify-content: center;
   margin-inline: 2%;
@@ -574,8 +591,16 @@ html {
   margin-block-end: 15px;
   font-weight: 700;
   font-size: 48px;
+
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
   font-style: normal;
   line-height: 65px;
+}
+
+@media (width <= 768px) {
+  .cotic__title {
+    margin-block-end: 0;
+  }
 }
 
 .cotic__button {
@@ -588,4 +613,61 @@ html {
   font-style: normal;
   line-height: 33px;
   background: #fff;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.cotic__button:hover {
+  background-color: #eff1f4;
+}
+
+/* footer */
+
+.footer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+
+  padding: 16px min(60px, 5%);
+}
+
+@media (width <= 768px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 30px;
+    padding-block: 30px;
+  }
+}
+
+@media (width >= 1440px) {
+  .footer {
+    padding-inline: 0;
+  }
+
+  .footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc((100% - var(--window-width)) / 2);
+    z-index: -1;
+    display: block;
+    background-color: #0c73fe;
+    block-size: 100%;
+    inline-size: var(--window-width);
+  }
+}
+
+.footer__menu__list {
+  display: flex;
+  gap: 30px;
+}
+
+.fotter__link-list {
+  display: flex;
+  gap: 30px;
 }
