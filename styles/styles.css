@@ -700,3 +700,55 @@ li.active a:hover {
   text-decoration: none;
   cursor: default;
 }
+
+/* help-buy */
+
+.help-buy {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 2%;
+  background: url("../images/plane-background.png") no-repeat center 95%,
+    url("../images/small-cloud.png") no-repeat left center,
+    url("../images/ticet.png") no-repeat right 60%, #0c73fe;
+  background-size: 80%, 30%, 10%;
+  block-size: 100dvh;
+}
+
+@media (width >= 1440px) {
+  .help-buy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc((100% - var(--window-width)) / 2);
+    z-index: -1;
+    display: block;
+    background-color: #0c73fe;
+    block-size: 100%;
+    inline-size: var(--window-width);
+  }
+}
+
+@media (width <= 1300px) {
+  .help-buy {
+    background: url("../images/plane-background.png") no-repeat center 90%,
+      url("../images/very-big-cloud.png") no-repeat 90% 25%, #0c73fe;
+    background-size: 80%, 70%;
+  }
+}
+
+@media (height <= 500px) {
+  .help-buy {
+    padding-block: 90px 30px;
+    background: #0c73fe;
+  }
+}
+
+.help-buy__title {
+  border-radius: 15px;
+  padding: 15px 30px;
+  color: #fff;
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
+  text-align: center;
+  background-color: #6ebd6f;
+}
