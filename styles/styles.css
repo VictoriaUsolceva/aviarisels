@@ -80,6 +80,9 @@ html {
   display: none;
   align-items: center;
   gap: 32px;
+}
+
+.menu__list li {
   opacity: 0.7;
 }
 
@@ -257,6 +260,13 @@ html {
   }
 }
 
+@media (height <= 500px) {
+  .ticets {
+    padding-block: 90px 30px;
+    block-size: 100dvh;
+  }
+}
+
 /* skidki */
 
 .skidki {
@@ -410,6 +420,14 @@ html {
 }
 
 @media (width <= 768px) {
+  .skidki {
+    top: 0;
+    margin-block-start: 20px;
+    inline-size: 94%;
+  }
+}
+
+@media (height <= 500px) {
   .skidki {
     top: 0;
     margin-block-start: 20px;
@@ -670,4 +688,15 @@ html {
 .fotter__link-list {
   display: flex;
   gap: 30px;
+}
+
+/* ABOUT.html */
+
+li.active {
+  opacity: 1;
+}
+
+li.active a:hover {
+  text-decoration: none;
+  cursor: default;
 }

@@ -19,7 +19,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
   </head>
   <body class="page">
-    <a id="start"></a>
     <header class="contrast-colors header">
       <a>
         <img src="./images/logo.svg" alt="логотип" />
@@ -335,7 +334,7 @@
         />
         <h2 class="cotic__title">Долистали до конца?</h2>
         <p>Вот вам милый котик!</p>
-        <a class="cotic__button" href="#start">Вернуться в начало</a>
+        <a class="cotic__button start">Вернуться в начало</a>
       </section>
     </main>
     <footer class="contrast-colors footer">
@@ -352,17 +351,17 @@
       </nav>
       <ul class="fotter__link-list">
         <li>
-          <a href="#0">
+          <a href="#start">
             <img src="./images/vk-fill.svg" alt="" />
           </a>
         </li>
         <li>
-          <a href="#0">
+          <a href="#start">
             <img src="./images/whatsapp.svg" alt="" />
           </a>
         </li>
         <li>
-          <a href="#0">
+          <a href="#start">
             <img src="./images/telegram.svg" alt="" />
           </a>
         </li>
@@ -370,6 +369,7 @@
     </footer>
 
     <script src="./js/script.js"></script>
+    <script src="./js/get-napravlenie.js"></script>
     <script>
       // Инициализация Glide
       const glide = new Glide(".glide", {
@@ -402,7 +402,7 @@
           768: {
             perView: 2,
           },
-          400: {
+          500: {
             perView: 1,
           },
         },
