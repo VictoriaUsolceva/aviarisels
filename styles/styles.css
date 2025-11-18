@@ -1009,3 +1009,32 @@ li.active a:hover {
   line-height: 33px;
   inline-size: 100%;
 }
+
+/* cities */
+
+.cities_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 325px));
+  justify-content: space-around;
+  gap: 30px;
+  margin-block-start: 60px;
+}
+
+.city-card img {
+  inline-size: 100%;
+}
+
+.empty-message {
+  display: none;
+  grid-column: 1 / -1;
+  margin-block-end: 60px;
+  border-radius: 15px;
+  padding-inline: 0.5em;
+  padding-block: 18px;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
+  font-style: normal;
+  text-align: center;
+  background: #fff;
+  inline-size: 100%;
+}
