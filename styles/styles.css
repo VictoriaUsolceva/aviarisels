@@ -855,3 +855,157 @@ li.active a:hover {
 .find-bold {
   font-weight: 700;
 }
+
+/* CITIES.html */
+
+/* korotko */
+
+.korotko {
+  position: relative;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 2%;
+  padding-inline: 120px;
+  block-size: 100dvh;
+  min-block-size: max-content;
+}
+
+@media (width >= 1440px) {
+  .korotko::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc((100% - var(--window-width)) / 2);
+    z-index: -1;
+    display: block;
+    background-color: #0c73fe;
+    block-size: 100%;
+    inline-size: var(--window-width);
+  }
+}
+
+@media (width <= 768px) {
+  .korotko {
+    padding-inline: 5%;
+  }
+}
+
+.korotko__title {
+  margin-block-end: 0.2em;
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
+}
+
+.korotko_text {
+  line-height: normal;
+  inline-size: 50%;
+}
+
+.korotko__content {
+  position: relative;
+  font-weight: 600;
+  font-size: clamp(1rem, 0rem + 2.0833vw, 1.875rem);
+  font-style: normal;
+  line-height: 41px;
+}
+
+.korotko__content::before {
+  content: "";
+  position: absolute;
+  bottom: -6.5em;
+  left: -3em;
+
+  z-index: 1;
+  display: block;
+  background-image: url(../images/big-cloud.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transform: scale(-1, 1);
+  inline-size: 7em;
+  block-size: 6em;
+}
+
+.korotko__content::after {
+  content: "";
+  position: absolute;
+  right: -3em;
+  bottom: -5em;
+
+  z-index: 1;
+  display: block;
+  background-image: url(../images/big-cloud.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inline-size: 9em;
+  block-size: 8em;
+}
+
+@media (width <= 768px) {
+  .korotko__content::before {
+    display: none;
+  }
+
+  .korotko__content::after {
+    right: 0;
+    bottom: -5em;
+    inline-size: 7em;
+    block-size: 6em;
+  }
+}
+
+@media (height <= 500px) {
+  .korotko {
+    padding-block: 90px 30px;
+  }
+
+  .korotko__content::before,
+  .korotko__content::after {
+    display: none;
+  }
+}
+
+.korotko__form {
+  position: relative;
+  margin-block-start: 2em;
+}
+
+.korotko__form::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 1.9em;
+  display: block;
+  background-image: url(../images/city.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inline-size: 50%;
+  block-size: 5em;
+}
+
+.search {
+  position: relative;
+}
+
+.search::before {
+  --before-size: 24px;
+  position: absolute;
+  left: 0.5em;
+  background-image: url(../images/search.svg);
+}
+
+.korotko__input {
+  padding-inline: 2.5em;
+  padding-block: 0.5em;
+
+  color: rgba(16, 14, 9, 0.3);
+  font-weight: 600;
+  font-size: clamp(1rem, 0.4286rem + 1.1905vw, 1.5rem);
+
+  font-style: normal;
+  line-height: 33px;
+  inline-size: 100%;
+}
