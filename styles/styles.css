@@ -1025,6 +1025,12 @@ li.active a:hover {
   margin-block-start: 60px;
 }
 
+.city-card {
+  font-size: 24px;
+  font-style: normal;
+  line-height: 33px;
+}
+
 .city-card img {
   inline-size: 100%;
 }
@@ -1042,4 +1048,64 @@ li.active a:hover {
   text-align: center;
   background: #fff;
   inline-size: 100%;
+}
+
+/* our-team */
+
+.our-team {
+  margin-inline: 2%;
+  margin-block: 30px;
+}
+
+.our-team__title {
+  text-align: center;
+}
+
+.team-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 410px));
+  justify-content: space-evenly;
+  gap: 30px;
+  margin-block-start: 60px;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-radius: 15px;
+  overflow: hidden;
+
+  font-size: 24px;
+  font-style: normal;
+  line-height: 33px;
+  background-color: #fff;
+}
+
+.team-card img {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+}
+
+.team-card > *:not(img) {
+  padding-inline: 15px;
+}
+
+.team-card h3 {
+  padding-block-start: 15px;
+}
+
+.team-card a {
+  padding-block: 5px 15px;
+  color: #0c73fe;
+}
+
+@media (width < 1344px) {
+  .team-card:last-of-type {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 410px;
+  }
 }
