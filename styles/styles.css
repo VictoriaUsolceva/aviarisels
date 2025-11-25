@@ -321,6 +321,10 @@ html {
   block-size: 24px;
 }
 
+.glide__arrow:hover {
+  cursor: pointer;
+}
+
 .glide__arrow--left {
   transform: rotate(90deg);
 }
@@ -637,6 +641,7 @@ html {
 
 .cotic__button:hover {
   background-color: #eff1f4;
+  cursor: pointer;
 }
 
 /* footer */
