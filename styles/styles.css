@@ -1231,7 +1231,15 @@ li.active a:hover {
   }
 }
 
-.mailing-list::before {
+.banner {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  inline-size: 100%;
+  block-size: 150px;
+}
+
+.banner::before {
   content: "";
   display: block;
 
@@ -1245,7 +1253,7 @@ li.active a:hover {
 }
 
 @media (width >= 1440px) {
-  .mailing-list::before {
+  .banner {
     inline-size: var(--window-width);
   }
 }
