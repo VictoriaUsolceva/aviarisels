@@ -833,6 +833,12 @@ li.active a:hover {
   letter-spacing: -0.05em;
   background: #eff1f4;
   inline-size: 320px;
+  transition: box-shadow 0.3s ease-in;
+}
+
+.find-card:hover {
+  box-shadow: 0px 0px 21px -7px #100e09;
+  cursor: pointer;
 }
 
 .find-card__content {
@@ -1029,6 +1035,13 @@ li.active a:hover {
   font-size: 24px;
   font-style: normal;
   line-height: 33px;
+  transition: box-shadow, padding 0.3s ease-in;
+  border-radius: 15px;
+}
+
+.city-card:hover {
+  padding: 5px;
+  box-shadow: 0px 0px 21px -12px #100e09;
 }
 
 .city-card img {
@@ -1080,6 +1093,11 @@ li.active a:hover {
   font-style: normal;
   line-height: 33px;
   background-color: #fff;
+  transition: box-shadow 0.3s ease-in;
+}
+
+.team-card:hover {
+  box-shadow: 0px 0px 21px -12px #100e09;
 }
 
 .team-card img {
@@ -1129,6 +1147,10 @@ li.active a:hover {
   margin-block-end: 15px;
 }
 
+.vibor-list h3:hover, .vibor-list p:hover {
+  cursor: pointer;
+}
+
 @media (width <= 1040px) {
   .vibor-list {
     grid-template-columns: repeat(2, 1fr);
@@ -1152,12 +1174,18 @@ li.active a:hover {
   padding-block: 30px;
   color: #fff;
   background-color: #0c73fe;
+
+  background-image: url(../images/png-kotik-form.png);
+  background-repeat: no-repeat;
+  background-position: bottom 30px left 30px;
+  background-size: 10%;
 }
 
 @media (width <= 768px) {
   .form-obrat-svyaz {
     grid-template-columns: 1fr;
     gap: 30px;
+    background-image: none;
   }
 }
 
@@ -1218,6 +1246,12 @@ li.active a:hover {
   line-height: 1.3;
   letter-spacing: -0.05em;
   background: #fa742d;
+  transition: background-color 0.3s ease-in;
+}
+
+.form-obrat-svyaz__button:hover {
+  background-color: #ff600c;
+  cursor: pointer;
 }
 
 /* mailing-list */
@@ -1246,7 +1280,7 @@ li.active a:hover {
   background-color: #f5a623;
   background-image: url(../images/mailing-list-image.png);
   transform: rotate(-2deg);
-  animation: banner 3s infinite linear forwards;
+  animation: banner 5s infinite linear forwards;
   inline-size: 100%;
   block-size: 72px;
   /* background-repeat: no-repeat; */
@@ -1305,6 +1339,13 @@ li.active a:hover {
   padding-block: 1em;
   color: #0c73fe;
   background: transparent;
+  transition: background-color 0.5s ease-in;
+}
+
+.mailing-list button:hover {
+  background-color: #0c73fe;
+  color: #fff;
+  cursor: pointer;
 }
 
 .mailing-list a {
