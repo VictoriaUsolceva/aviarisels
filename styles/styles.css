@@ -1147,7 +1147,8 @@ li.active a:hover {
   margin-block-end: 15px;
 }
 
-.vibor-list h3:hover, .vibor-list p:hover {
+.vibor-list h3:hover,
+.vibor-list p:hover {
   cursor: pointer;
 }
 
@@ -1351,4 +1352,123 @@ li.active a:hover {
 .mailing-list a {
   color: #0c73fe;
   text-decoration: underline;
+}
+
+/* putechestvia */
+
+.putechestvia {
+  background-color: #0c73fe;
+  padding-block: 60px 70px;
+
+  border-radius: 8px 8px 0px 0px;
+  position: relative;
+  /* margin-bottom: 60px; */
+}
+
+@media (width >= 1440px) {
+  .putechestvia::before {
+    content: "";
+    position: absolute;
+    top: 60px;
+    left: calc((100% - var(--window-width)) / 2);
+    z-index: -1;
+    display: block;
+    background-color: #0c73fe;
+    block-size: calc(100% - 60px);
+    inline-size: var(--window-width);
+  }
+}
+
+.putechestvia h2 {
+  align-self: end;
+  margin-block-end: 60px;
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
+  text-align: center;
+  color: #fff;
+}
+
+.putechestvia__img-div {
+  inline-size: 100%;
+  position: relative;
+  aspect-ratio: 35/18;
+}
+
+@media (width <= 765px) {
+  .putechestvia__img-div {
+    block-size: 80vh;
+  }
+}
+
+.putechestvia__img-div img {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+  transition: filter 0.3s ease-in;
+}
+
+.putechestvia__img-div a:first-of-type {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.putechestvia__img-div a:first-of-type::before {
+  content: "Москва";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  background-color: #100e09;
+  padding-block: 0.5em;
+  padding-inline: 2em;
+
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
+
+  border-radius: 15px;
+  z-index: 1;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+}
+
+.putechestvia__img-div a:last-of-type::before {
+  content: "Сочи";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  background-color: #100e09;
+  padding-block: 0.5em;
+  padding-inline: 2em;
+
+  font-size: clamp(1.75rem, 1.2692rem + 1.8315vw, 3rem);
+
+  border-radius: 15px;
+  z-index: 1;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 65px;
+}
+
+.putechestvia__img-div a:last-of-type {
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 0px 0px 8px 8px;
+}
+
+@media (width <= 765px) {
+  .putechestvia__img-div a {
+    block-size: 67%;
+  }
+}
+
+.putechestvia__img-div img:hover {
+  filter: brightness(60%);
 }
